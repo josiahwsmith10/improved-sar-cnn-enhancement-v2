@@ -1,0 +1,4 @@
+title                               o_x (mm)
+sar2DMIMOAWR1243_3D_png_yesAmp      ?
+sar2DMIMOAWR1243_3D_rand_yesAmp     3
+sar2DMIMOAWR1243_3D_rand_yesAmp_v2  2
