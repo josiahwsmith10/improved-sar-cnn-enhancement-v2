@@ -7,8 +7,9 @@ An early project for using CNN models to enhance radar images. Work from this pr
 - Deep Learning-Based Multiband Signal Fusion for 3-D SAR Super-Resolution ([arXiv](https://arxiv.org/abs/2305.02017), [DOI](https://doi.org/10.1109/TAES.2023.3270111))
 - Improved Static Hand Gesture Classification on Deep Convolutional Neural Networks using Novel Sterile Training Technique ([arXiv](https://arxiv.org/abs/2305.02039), [DOI](https://doi.org/10.1109/ACCESS.2021.3051454))
 
-## Earlier version
-- The first version of this project can be found at [sar-cnn-enhancement](https://github.com/josiahwsmith10/sar-cnn-enhancement)
+## Earlier versions
+- The first version (V1) of this project can be found at [sar-cnn-enhancement](https://github.com/josiahwsmith10/sar-cnn-enhancement)
+- The beta second version (V2) of this project can be found at [improved-sar-cnn-enhancement](https://github.com/josiahwsmith10/improved-sar-cnn-enhancement)
 
 # Publication and Citation
 If you appreciate our work, please cite one of the papers based on this work
