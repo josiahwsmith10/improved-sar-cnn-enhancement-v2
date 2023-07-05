@@ -76,11 +76,71 @@ demoNetworkCutoutXYZ(im,ant,sar,fmcw,target,fcnnNet,-25,"cable.png")
 load rectilinearTest3.mat knife
 testReal(fcnnNet,knife,im,-25,fig);
 
+%% Create Nice Figure (bothNet)
+testReal(fcnnNet,knife,im,-20,fig);
+
+%% Set Figure Aspects -10dB
+setFigure(fig.enhancedImage)
+exportgraphics(fig.enhancedImage.h,"./figures_jun2023/knife_enhanced.png","Resolution",600)
+
+%% Set Figure Aspects -20dB
+setFigure(fig.sarImage)
+exportgraphics(fig.sarImage.h,"./figures_jun2023/knife_raw.png","Resolution",600)
+
+
+%% Set Non-labeled figure -10dB
+removeLabels(fig.enhancedImage)
+exportgraphics(fig.enhancedImage.h,"./figures_jun2023/knife_enhanced_nolabels.png","Resolution",600)
+
+%% Set Non-labeled figure -20dB
+removeLabels(fig.sarImage)
+exportgraphics(fig.sarImage.h,"./figures_jun2023/knife_raw_nolabels.png","Resolution",600)
+
 %% Save the Network
 %-------------------------------------------------------------------------%
 save ./nets_jan22/sar2DMIMOAWR1243_3D_pngRand_net_improved fcnnNet im -v7.3
 
 %% Functions
+
+function setFigure(im)
+h = im.h;
+
+colorbar(h,"off")
+h.FontSize = 12;
+h.View = [-30,20];
+h.XLim = [-0.1,0.1];
+h.YLim = [0.225,0.375];
+h.ZLim = [-0.1,0.15];
+h.Title.String = "";
+h.LineWidth = 1.5;
+h.XLabel.FontSize = 20;
+h.YLabel.FontSize = 20;
+h.ZLabel.FontSize = 20;
+h.XLabel.Interpreter = "latex";
+h.YLabel.Interpreter = "latex";
+h.ZLabel.Interpreter = "latex";
+end
+
+function removeLabels(im)
+h = im.h;
+
+colorbar(h,"off")
+h.FontSize = 12;
+h.View = [-30,20];
+h.XLim = [-0.1,0.1];
+h.YLim = [0.225,0.375];
+h.ZLim = [-0.1,0.15];
+h.XTickLabel = [];
+h.XLabel.String = "";
+h.YTickLabel = [];
+h.YLabel.String = "";
+h.ZTickLabel = [];
+h.ZLabel.String = "";
+h.Title.String = "";
+colorbar(h,"off")
+h.LineWidth = 1.5;
+end
+
 function [Layers,Options] = fcnn_createNetwork3D_ds(ds,netParams)
 %% Declare Network Layers
 %-------------------------------------------------------------------------%
